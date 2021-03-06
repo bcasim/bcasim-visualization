@@ -1,0 +1,6 @@
+node0: 24
+node1: 0
+node2: 0
+node3: 0
+node4: 0
+合計: 24

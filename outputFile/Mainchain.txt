@@ -1,0 +1,6 @@
+node0: 786
+node1: 141
+node2: 0
+node3: 0
+node4: 0
+合計: 927
