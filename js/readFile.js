@@ -1,0 +1,47 @@
+const matrix_filename = "./outputFile/adjacencyMatrix.csv";
+const blockchain_filename = "./outputFile/block.json";
+const event_filename = "./outputFile/event.json";
+    
+    
+/*ファイルデータを保存*/
+var blockchain_data;
+var event_data;
+var matrix_data;
+
+
+function input_data() {
+    $(function() {
+        $.getJSON(event_filename, function(data) {
+            event_data = data;
+        })
+    });
+    $(function() {
+        $.getJSON(blockchain_filename, function(data) {
+            blockchain_data = data;
+        })
+    });
+    getCSVFile();
+}
+
+
+/*csvファイルの読み込み処理*/
+function getCSVFile() {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        createArray(xhr.responseText);
+    };
+    xhr.open("get", matrix_filename , true);
+    xhr.send(null);
+}
+
+
+
+function createArray(csvData) {
+    var tempArray = csvData.split("\n");
+    var csvArray = new Array();
+    for(var i = 0; i<tempArray.length;i++){
+        csvArray[i] = tempArray[i].split(",");
+    }
+    matrix_data = csvArray;
+
+}

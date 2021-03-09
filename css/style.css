@@ -1,0 +1,42 @@
+
+body {
+    background-color: #EEEEEE;
+}
+
+
+#setting_panel {
+    display:none;
+    clear:both;
+    border:1px solid lightgray;
+    background-color:#F8F8FF;
+}
+
+#button_panel {
+    display: flex;
+}
+
+
+#main_panel {
+    display: flex;
+}
+
+#network_panel {
+    width:  70%;
+    height: 800px;
+    flex-grow: 1;
+    border: 1px solid lightgray;
+    background-color:#F8F8FF;
+}
+
+#blockchain_panel {
+    width:  30%;
+    height: 800px;
+    flex-grow: 1;
+    border: 1px solid lightgray;
+    background-color:#F8F8FF;
+}
+
+#timestamp_area {
+    text-align: center;
+    font: 20pt arial;
+}

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="ja">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BCASim Visualization System</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<script src="./js/dist/jquery-3.1.0.min.js"></script>
+<script src="./js/dist/vis.js"></script>
+
+
+<body>
+
+    <!-- timestamp area -->
+    <center><span id="timestamp_area">The simulation time is displayed here</span></center>
+    
+    <!-- menu button -->
+    <div id="button_panel">
+        <div onclick="start_simulation();">
+            <a style="cursor:pointer;">▼ スタート</a>
+        </div>
+        <div onclick="obj=document.getElementById('setting_panel').style; obj.display=(obj.display=='none')?'block':'none';">
+            <a style="cursor:pointer;">▼ 設定</a>
+        </div>
+    </div>
+
+    <!-- folding panel -->
+    <div id="setting_panel">
+        <ul>
+            <li>色分け：
+                <form id="node">
+                    <input type="radio" name="node" value="1" checked="checked">ノード
+                    <input type="radio" name="node" value="2">ブロックチェーン
+                </form>
+            </li>
+            <li>スピード（倍速）：
+                <input type="text" name="speed" size="10" maxlength="10" value="10" id="speed">
+            </li>
+            <li>ネットワーク表示：
+                <form id="network">
+                    <input type="radio" name="network" value="1" checked="checked">円形
+                    <input type="radio" name="network" value="2">四角
+                </form>
+            </li>
+            <li>開始地点（時間）：
+                <input type="text" name="start_point" size="10" maxlength="10" value="0" id="start_point">
+            </li>
+        </ul>
+    </div>
+    
+    <!-- view network and data structures -->
+    <div id="main_panel">
+        <div id="network_panel">
+        </div>
+        <div id="blockchain_panel">
+        </div>
+    </div>
+
+</body>
+
+<script src="./js/readFile.js"></script>
+<script src="./js/blockchain.js"></script>
+<script src="./js/network.js"></script>
+<script src="./js/main.js"></script>
+
+</html>
