@@ -64,9 +64,7 @@ function update_node_found(node_id,index,hash){
     //ブロック高が最大の場合は追加する
     if(node_index[node_id]<index){
         node_index[node_id] = index;
-        if(document.getElementById("node").node.value == "1"){
-            nodes.update({id:node_id, group: color_lists.length+1});
-        }
+        /*nodes.update({id:node_id, group: color_lists.length+1});*/
     } 
 }
  
@@ -85,9 +83,7 @@ function update_node_receive(node_id,index,hash){
     //ノードの色を更新
     if(node_index[node_id]<index){
         node_index[node_id] = index;
-        if(document.getElementById("node").node.value == "1"){
-            nodes.update({id:node_id, group: _color});
-        }
+        /*nodes.update({id:node_id, group: _color});*/
     } 
 }
 

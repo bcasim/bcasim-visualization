@@ -44,7 +44,12 @@ function next_block(){
             _miner = blockchain_data[block_index].miner;
             _height = blockchain_data[block_index].height;
             
-            nodes_block.add({id: block_index, label: _height+"\nnode"+_miner, group: _miner});
+            if(document.getElementById("node").node.value == "1"){
+                nodes_block.add({id: block_index, label: _height+"\nnode"+_miner, group: block_index+1});
+            }else if(document.getElementById("node").node.value == "2"){
+                nodes_block.add({id: block_index, label: _height+"\nnode"+_miner, group: _miner});
+            }
+
             edges_block.add({from: i, to: block_index, arrows: "to",width: 3});
             block_index++;
             break;

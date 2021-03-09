@@ -12,7 +12,7 @@ function showClock() {
         remove_traffic();
     }
     
-    time = time + 20;
+    time = time + Number(document.getElementById("speed").value);
     while(true){
         if(time < Number(blockchain_data[block_index].receiveTime)){
             break;
@@ -39,7 +39,7 @@ function sleep(msec) {
 }
 
 async function start() {
-    await sleep(300);
+    await sleep(200);
 
     //停止条件
     if(blockchain_data.length <= block_index || event_data <= event_id){
@@ -51,7 +51,7 @@ async function start() {
 }
 
 async function start_traffic() {
-    await sleep(300);
+    await sleep(200);
     play_traffic();
     start_traffic()
 }
@@ -68,10 +68,10 @@ input_data();
 
 
 function start_simulation(){
-    var speed_value = document.getElementById("speed").value;
-    var start_point_value = document.getElementById("start_point").value;
-    var node_value = document.getElementById("node").node.value;
-    var network_value = document.getElementById("network").network.value;
-
+    time = Number(document.getElementById("start_point").value);
+    //var speed_value = document.getElementById("speed").value;
+    //var start_point_value = document.getElementById("start_point").value;
+    //var node_value = document.getElementById("node").node.value;
+    //var network_value = document.getElementById("network").network.value;
     main();
 }
