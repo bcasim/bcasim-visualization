@@ -20,6 +20,10 @@ var event_id = 0;
 function add_node(){
     var nc = 1;
     for (var i=0; i<matrix_data[0].length; i++){
+        if(document.getElementById("node").node.value == "1"){
+            nodes.add([{id:i, label:"node"+i, group: 1}]);
+            continue;
+        }
         nodes.add([{id:i, label:"node"+i, group: nc}]);
         nc++;
     }
@@ -177,7 +181,7 @@ function init_network(){
    var options = {
        nodes: {
            shape: "dot",
-           size: 20,
+           size: 15,
        },
        edges:{
            smooth: false,/*falseにすると直線になる*/
@@ -186,7 +190,7 @@ function init_network(){
            },*/  
        },
        //---レイアウト
-       /* layout: {
+       /*layout: {
            hierarchical: {
                direction: "LR", 
                sortMethod: "directed"

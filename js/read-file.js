@@ -1,6 +1,6 @@
-const matrix_filename = "./outputFile/adjacencyMatrix.csv";
-const blockchain_filename = "./outputFile/block.json";
-const event_filename = "./outputFile/event.json";
+const matrix_filename = "./output-file/adjacencyMatrix.csv";
+const blockchain_filename = "./output-file/block.json";
+const event_filename = "./output-file/event.json";
     
     
 /*ファイルデータを保存*/

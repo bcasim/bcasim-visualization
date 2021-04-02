@@ -27,8 +27,10 @@ var options_block = {
     }
 };
 
-
 var b_color = [];
+
+var blockchian = new vis.Network(container_block, data_block, options_block);
+
 /*チェーンに次のブロックを追加して表示する*/
 function next_block(){
     if(block_index==0){
@@ -56,6 +58,3 @@ function next_block(){
         }
     }
 }
-
-/*++++++++++++ MAIN（ブロックチェーン処理）++++++++++*/
-var blockchian = new vis.Network(container_block, data_block, options_block);

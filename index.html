@@ -22,32 +22,32 @@
     <!-- menu button -->
     <div id="button_panel">
         <div onclick="start_simulation();">
-            <a style="cursor:pointer;">▼ スタート</a>
+            <a style="cursor:pointer;">▼ Start</a>
         </div>
         <div onclick="obj=document.getElementById('setting_panel').style; obj.display=(obj.display=='none')?'block':'none';">
-            <a style="cursor:pointer;">▼ 設定</a>
+            <a style="cursor:pointer;">▼ Setting</a>
         </div>
     </div>
 
     <!-- folding panel -->
     <div id="setting_panel">
         <ul>
-            <li>色分け：
+            <li>Color coded：
                 <form id="node">
-                    <input type="radio" name="node" value="1" checked="checked">ノード
-                    <input type="radio" name="node" value="2">ブロックチェーン
+                    <input type="radio" name="node" value="1" checked="checked">node
+                    <input type="radio" name="node" value="2">blockchain
                 </form>
             </li>
-            <li>スピード（倍速）：
+            <li>Speed（Double speed）：
                 <input type="text" name="speed" size="10" maxlength="10" value="10" id="speed">
             </li>
-            <li>ネットワーク表示：
+            <!--<li>ネットワーク表示：
                 <form id="network">
                     <input type="radio" name="network" value="1" checked="checked">円形
                     <input type="radio" name="network" value="2">四角
                 </form>
-            </li>
-            <li>開始地点（時間）：
+            </li>-->
+            <li>Start time：
                 <input type="text" name="start_point" size="10" maxlength="10" value="0" id="start_point">
             </li>
         </ul>
@@ -63,7 +63,7 @@
 
 </body>
 
-<script src="./js/readFile.js"></script>
+<script src="./js/read-file.js"></script>
 <script src="./js/blockchain.js"></script>
 <script src="./js/network.js"></script>
 <script src="./js/main.js"></script>

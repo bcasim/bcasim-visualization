@@ -1,5 +1,3 @@
-//<!--------------------------解析スケジューラ------------------------>
-
 
 /*時計,処理の進行*/
 var time = 0;
@@ -8,10 +6,11 @@ function showClock() {
     if (blockchain_data === undefined || event_data == undefined) {
         return;
     }
-    if(time%60==0){
+    /*if(time%60==0){
         remove_traffic();
-    }
-    
+    }*/
+    remove_traffic();
+
     time = time + Number(document.getElementById("speed").value);
     while(true){
         if(time < Number(blockchain_data[block_index].receiveTime)){
@@ -31,6 +30,7 @@ function showClock() {
 }
 
 
+
 /*リピート関数*/
 function sleep(msec) {
     return new Promise(function(resolve) {
@@ -39,7 +39,7 @@ function sleep(msec) {
 }
 
 async function start() {
-    await sleep(200);
+    await sleep(500);
 
     //停止条件
     if(blockchain_data.length <= block_index || event_data <= event_id){
@@ -51,7 +51,7 @@ async function start() {
 }
 
 async function start_traffic() {
-    await sleep(200);
+    await sleep(100);
     play_traffic();
     start_traffic()
 }
